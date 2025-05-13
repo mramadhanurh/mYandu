@@ -62,7 +62,7 @@
             <div class="sidebar-wrapper scrollbar scrollbar-inner">
                 <div class="sidebar-content">
                     <ul class="nav nav-secondary">
-                        <li class="nav-item">
+                        <li class="nav-item <?= isset($menu) && $menu == 'admin' ? 'active' : '' ?>">
                             <a href="<?= base_url('Admin/index') ?>">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
@@ -74,25 +74,13 @@
                             </span>
                             <h4 class="text-section">Master Data</h4>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('Tahunajaran') ?>">
+                        <li class="nav-item <?= isset($menu) && $menu == 'kategori' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Kategori') ?>">
                                 <i class="fas fa-desktop"></i>
-                                <p>Tahun Ajaran</p>
+                                <p>Kategori</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('Kelas') ?>">
-                                <i class="fas fa-desktop"></i>
-                                <p>Kelas</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">
-                                <i class="fas fa-desktop"></i>
-                                <p>Siswa</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= isset($menu) && $menu == 'user' ? 'active' : '' ?>">
                             <a href="<?= base_url('User') ?>">
                                 <i class="fas fa-desktop"></i>
                                 <p>Pengguna</p>
