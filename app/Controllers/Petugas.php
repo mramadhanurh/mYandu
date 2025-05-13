@@ -9,6 +9,7 @@ class Petugas extends BaseController
     public function index()
     {
         $data = [
+            'menu' => 'petugas',
             'page' => 'v_petugas',
         ];
         return view('v_template', $data);

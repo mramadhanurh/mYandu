@@ -62,6 +62,12 @@
             <div class="sidebar-wrapper scrollbar scrollbar-inner">
                 <div class="sidebar-content">
                     <ul class="nav nav-secondary">
+                    
+                    <?php $level = session()->get('level'); ?>
+
+                    <!-- Untuk Admin (Level 1) -->
+                    <?php if ($level == 1): ?>
+
                         <li class="nav-item <?= isset($menu) && $menu == 'admin' ? 'active' : '' ?>">
                             <a href="<?= base_url('Admin/index') ?>">
                                 <i class="fas fa-home"></i>
@@ -98,6 +104,31 @@
                                 <p>Pembayaran</p>
                             </a>
                         </li>
+
+                    <?php endif; ?>
+
+                    <!-- Untuk Petugas (Level 2) -->
+                    <?php if ($level == 2): ?>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'petugas' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Petugas') ?>">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
+                            <h4 class="text-section">Petugas Posyandu</h4>
+                        </li>
+                        <li class="nav-item <?= isset($menu) && $menu == 'ibu' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Ibu') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Catat Data Ibu</p>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                     </ul>
                 </div>
             </div>
