@@ -128,6 +128,12 @@
                                 <p>Catat Data Ibu</p>
                             </a>
                         </li>
+                        <li class="nav-item <?= isset($menu) && $menu == 'anak' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Anak') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Catat Data Anak</p>
+                            </a>
+                        </li>
                     <?php endif; ?>
                     </ul>
                 </div>
