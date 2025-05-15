@@ -86,22 +86,16 @@
                                 <p>Kategori</p>
                             </a>
                         </li>
+                        <li class="nav-item <?= isset($menu) && $menu == 'jadwal' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Jadwal') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Jadwal</p>
+                            </a>
+                        </li>
                         <li class="nav-item <?= isset($menu) && $menu == 'user' ? 'active' : '' ?>">
                             <a href="<?= base_url('User') ?>">
                                 <i class="fas fa-desktop"></i>
                                 <p>Pengguna</p>
-                            </a>
-                        </li>
-                        <li class="nav-section">
-                            <span class="sidebar-mini-icon">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </span>
-                            <h4 class="text-section">Transaksi</h4>
-                        </li>
-                        <li class="nav-item">
-                            <a href="widgets.html">
-                                <i class="fas fa-desktop"></i>
-                                <p>Pembayaran</p>
                             </a>
                         </li>
 
