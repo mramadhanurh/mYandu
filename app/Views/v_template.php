@@ -130,7 +130,7 @@
                         </li>
 
                         <?php
-                            $isPemeriksaanActive = isset($menu) && in_array($menu, ['jenis', 'icon']);
+                            $isPemeriksaanActive = isset($menu) && in_array($menu, ['jenis', 'pemeriksaan']);
                         ?>
 
                         <li class="nav-item <?= $isPemeriksaanActive ? 'active submenu' : '' ?>">
@@ -146,9 +146,9 @@
                                             <span class="sub-item">Jenis Pemeriksaan</span>
                                         </a>
                                     </li>
-                                    <li class="<?= isset($menu) && $menu == 'icon' ? 'active' : '' ?>">
-                                        <a href="icon-menu.html">
-                                            <span class="sub-item">Icon Menu</span>
+                                    <li class="<?= isset($menu) && $menu == 'pemeriksaan' ? 'active' : '' ?>">
+                                        <a href="<?= base_url('Pemeriksaan') ?>">
+                                            <span class="sub-item">Pemeriksaan</span>
                                         </a>
                                     </li>
                                 </ul>

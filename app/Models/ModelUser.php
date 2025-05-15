@@ -13,6 +13,14 @@ class ModelUser extends Model
             ->getResultArray();
     }
 
+    public function getPetugas()
+    {
+        return $this->db->table('tbl_user')
+            ->where('level', 2)
+            ->get()
+            ->getResultArray();
+    }
+
     public function InsertData($data)
     {
         $this->db->table('tbl_user')->insert($data);

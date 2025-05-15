@@ -6,37 +6,32 @@ use CodeIgniter\Model;
 
 class ModelPemeriksaan extends Model
 {
-    protected $DBGroup          = 'default';
-    protected $table            = 'modelpemeriksaans';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $insertID         = 0;
-    protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    public function AllData()
+    {
+        return $this->db->table('tbl_pemeriksaan')
+            ->join('tbl_anak', 'tbl_anak.id_anak=tbl_pemeriksaan.id_anak')
+            ->join('tbl_jadwal', 'tbl_jadwal.id_jadwal=tbl_pemeriksaan.id_jadwal')
+            ->join('tbl_user', 'tbl_user.id_user=tbl_pemeriksaan.id_user')
+            ->get()
+            ->getResultArray();
+    }
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    public function InsertData($data)
+    {
+        $this->db->table('tbl_pemeriksaan')->insert($data);
+    }
 
-    // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
-    protected $skipValidation       = false;
-    protected $cleanValidationRules = true;
+    public function UpdateData($data)
+    {
+        $this->db->table('tbl_pemeriksaan')
+            ->where('id_pemeriksaan', $data['id_pemeriksaan'])
+            ->update($data);
+    }
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert   = [];
-    protected $afterInsert    = [];
-    protected $beforeUpdate   = [];
-    protected $afterUpdate    = [];
-    protected $beforeFind     = [];
-    protected $afterFind      = [];
-    protected $beforeDelete   = [];
-    protected $afterDelete    = [];
+    public function DeleteData($data)
+    {
+        $this->db->table('tbl_pemeriksaan')
+            ->where('id_pemeriksaan', $data['id_pemeriksaan'])
+            ->delete($data);
+    }
 }
