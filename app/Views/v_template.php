@@ -128,6 +128,32 @@
                                 <p>Catat Data Anak</p>
                             </a>
                         </li>
+
+                        <?php
+                            $isPemeriksaanActive = isset($menu) && in_array($menu, ['jenis', 'icon']);
+                        ?>
+
+                        <li class="nav-item <?= $isPemeriksaanActive ? 'active submenu' : '' ?>">
+                            <a data-bs-toggle="collapse" href="#sidebarLayouts">
+                                <i class="fas fa-stethoscope"></i>
+                                <p>Pemeriksaan</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse <?= $isPemeriksaanActive ? 'show' : '' ?>" id="sidebarLayouts">
+                                <ul class="nav nav-collapse">
+                                    <li class="<?= isset($menu) && $menu == 'jenis' ? 'active' : '' ?>">
+                                        <a href="<?= base_url('Jenispemeriksaan') ?>">
+                                            <span class="sub-item">Jenis Pemeriksaan</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?= isset($menu) && $menu == 'icon' ? 'active' : '' ?>">
+                                        <a href="icon-menu.html">
+                                            <span class="sub-item">Icon Menu</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     <?php endif; ?>
                     </ul>
                 </div>
