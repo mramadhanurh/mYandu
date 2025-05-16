@@ -159,6 +159,13 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'laporan' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Laporan') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Laporan</p>
+                            </a>
+                        </li>
                     <?php endif; ?>
                     </ul>
                 </div>

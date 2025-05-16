@@ -67,7 +67,7 @@
                                         <tr>
                                             <td class="text-center"><?= $no++ ?></td>
                                             <td><?= $value['nama_anak'] ?></td>
-                                            <td><?= $value['tanggal_lahir'] ?></td>
+                                            <td><?= date('d-m-Y', strtotime($value['tanggal_lahir'])) ?></td>
                                             <td class="text-center">
                                             <?php
                                             if ($value['jenis_kelamin'] == 1) { ?>

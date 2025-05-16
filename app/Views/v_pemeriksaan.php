@@ -69,9 +69,9 @@
                                         <tr>
                                             <td class="text-center"><?= $no++ ?></td>
                                             <td><?= $value['nama_anak'] ?></td>
-                                            <td><?= $value['tanggal'] ?></td>
+                                            <td><?= date('d-m-Y', strtotime($value['tanggal'])) ?></td>
                                             <td><?= $value['nama_user'] ?></td>
-                                            <td><?= $value['tanggal_cek'] ?></td>
+                                            <td><?= date('d-m-Y', strtotime($value['tanggal_cek'])) ?></td>
                                             <td><?= $value['catatan'] ?></td>
                                             <td class="text-center">
                                                 <button class="btn btn-icon btn-round btn-success" data-bs-toggle="modal" data-bs-target="#edit-data<?= $value['id_pemeriksaan'] ?>">
