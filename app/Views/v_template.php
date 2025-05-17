@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <title>Dashboard - SI Posyandu</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?= base_url('admin') ?>/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="<?= base_url('admin') ?>/assets/img/Logo_Posyandu.png" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="<?= base_url('admin') ?>/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -167,6 +167,42 @@
                             </a>
                         </li>
                     <?php endif; ?>
+
+                    <!-- Untuk Kader (Level 3) -->
+                    <?php if ($level == 3): ?>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'kader' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Kader') ?>">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'laporan' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Laporan') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Laporan</p>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                    <!-- Untuk Orang Tua (Level 4) -->
+                    <?php if ($level == 4): ?>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'orangtua' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Orangtua') ?>">
+                                <i class="fas fa-home"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item <?= isset($menu) && $menu == 'jadwal' ? 'active' : '' ?>">
+                            <a href="<?= base_url('Jadwal') ?>">
+                                <i class="fas fa-desktop"></i>
+                                <p>Jadwal</p>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -224,10 +260,10 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="dropdown-divider"></div>
+                                            <!-- <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">My Profile</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Account Setting</a>
+                                            <a class="dropdown-item" href="#">Account Setting</a> -->
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="<?= base_url('Home/Logout') ?>">Logout</a>
                                         </li>

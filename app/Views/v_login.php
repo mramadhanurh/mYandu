@@ -38,7 +38,7 @@
                                 <div class="col-12">
                                     <div class="mb-4">
                                         <h3>Sign in</h3>
-                                        <p>Don't have an account? <a href="#!">Sign up</a></p>
+                                        <p>Silahkan sign in terlebih dahulu</p>
                                     </div>
                                 </div>
                             </div>

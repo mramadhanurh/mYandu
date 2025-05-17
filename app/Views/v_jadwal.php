@@ -24,9 +24,11 @@
                         <div class="card-head-row">
                             <div class="card-title">Jadwal</div>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-primary btn-round" data-bs-toggle="modal" data-bs-target="#add-data">
-                                    Tambah Jadwal
-                                </button>
+                                <?php if (session('level') == 1) : ?>
+                                    <button type="button" class="btn btn-primary btn-round" data-bs-toggle="modal" data-bs-target="#add-data">
+                                        Tambah Jadwal
+                                    </button>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -49,7 +51,9 @@
                                         <th>Tanggal</th>
                                         <th>Lokasi</th>
                                         <th>Kategori</th>
-                                        <th>Aksi</th>
+                                        <?php if (session('level') == 1) : ?>
+                                            <th>Aksi</th>
+                                        <?php endif; ?>
                                     </tr>
                                 </thead>
                                 <tfoot class="text-center">
@@ -57,24 +61,28 @@
                                     <th>Tanggal</th>
                                     <th>Lokasi</th>
                                     <th>Kategori</th>
-                                    <th>Aksi</th>
+                                    <?php if (session('level') == 1) : ?>
+                                        <th>Aksi</th>
+                                    <?php endif; ?>
                                 </tfoot>
                                 <tbody>
                                     <?php $no = 1;
                                     foreach ($jadwal as $key => $value) { ?>
                                         <tr>
                                             <td class="text-center"><?= $no++ ?></td>
-                                            <td><?= $value['tanggal'] ?></td>
+                                            <td><?= date('d-m-Y', strtotime($value['tanggal'])) ?></td>
                                             <td><?= $value['lokasi'] ?></td>
                                             <td><?= $value['nama_kategori'] ?></td>
-                                            <td class="text-center">
-                                                <button class="btn btn-icon btn-round btn-success" data-bs-toggle="modal" data-bs-target="#edit-data<?= $value['id_jadwal'] ?>">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-round btn-danger" data-bs-toggle="modal" data-bs-target="#delete-data<?= $value['id_jadwal'] ?>">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </td>
+                                            <?php if (session('level') == 1) : ?>
+                                                <td class="text-center">
+                                                    <button class="btn btn-icon btn-round btn-success" data-bs-toggle="modal" data-bs-target="#edit-data<?= $value['id_jadwal'] ?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-round btn-danger" data-bs-toggle="modal" data-bs-target="#delete-data<?= $value['id_jadwal'] ?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </td>
+                                            <?php endif; ?>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
